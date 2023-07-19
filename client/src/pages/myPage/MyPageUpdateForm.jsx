@@ -17,7 +17,6 @@ function MyPageUpdateForm(props) {
     const userName = loginTrue.sessionName;
     const userBirth = loginTrue.sessionBirth;
     const userEmail = loginTrue.sessionEmail;
-    const userPass = loginTrue.sessionPass;
 
     // 유저 핸드폰번호(id)에 '-' 기호 붙여주기 위함
     const userId = loginTrue?.sessionId;
@@ -32,12 +31,7 @@ function MyPageUpdateForm(props) {
     // 이메일 input
     const [emailInput, setEmailInput] = useState(userEmail);
     // 비밀번호 input
-    const [passInput, setPassInput] = useState(userPass);
-
-    // 휴대폰 인증 버튼 클릭
-    const authPhoneOnClick = () => {
-        navigate("/checkPhone");
-    };
+    const [passInput, setPassInput] = useState("");
 
     // 이름 onchange
     const nameOnChange = (e) => {
@@ -59,7 +53,6 @@ function MyPageUpdateForm(props) {
     // form submit 막기
     const userUpdateOnSubmit = (e) => {
         e.preventDefault();
-        // updateDoneClick();
     };
 
     // 마이페이지 수정 정보 전송 [post]
@@ -213,33 +206,6 @@ export default MyPageUpdateForm;
 
 const Profilearea = styled.div`
 `
-
-const TxtDiv =styled.div`
-    font-weight: 700;
-    font-size: 16px;
-    text-align: center;
-`
-const AuthPhoneArea = styled.div`
-    padding-top: 15px;
-    padding-bottom: 10px;
-
-    .txt{
-        font-size: 11px;
-        font-weight: 700;
-        color: #432C20;
-    }
-`
-
-const AuthPhoneBtn = styled.button`
-    margin-top: 7px;
-    background-color: #F6F290;
-    border: 1px solid #432C20;
-    border-radius: 30px;
-    font-size: 13px;
-    cursor: pointer;
-    padding: 2px 14px 2px 14px;
-`
-
 const FormArea = styled.form`
     padding: 20px;
     text-align: center;
